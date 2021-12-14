@@ -10,7 +10,7 @@ Diese Aufgabe soll euch in den Umgang mit Objekten einführen.
 
 - Erstellt eine Klasse ```Mail``` die mindestens 3 sinnvolle Attribute hat (z.B. ```String sender```, ```String recipient```, ```String date```, ```String text```).
 - Füllt die Klasse mit sinnvollen Gettern und Settern
-- Programmiert eine Methode ```public String toString()``` die als  ```return``` Wert einen String zurückgibt, der die E-mail als String beinhaltet
+- Programmiert in der ```Mail``` Klasse eine Methode ```public String toString()``` die als  ```return``` Wert einen String zurückgibt, der die E-mail als String beinhaltet
 - Erstellt mindestens einen Konstruktor für die Klasse
 - Erzeugt in der ```main``` Methode ein neues Objekt vom Typ ```Mail``` und greift auf die Attribute zu
 
