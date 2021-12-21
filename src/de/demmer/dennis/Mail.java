@@ -2,6 +2,11 @@ package de.demmer.dennis;
 
 import java.util.Date;
 
+import org.simplejavamail.api.email.Email;
+import org.simplejavamail.api.mailer.Mailer;
+import org.simplejavamail.email.EmailBuilder;
+import org.simplejavamail.mailer.MailerBuilder;
+
 public class Mail{
 
 	private String sender;
@@ -49,6 +54,13 @@ public class Mail{
 	
 	public String toString() {
 		return "Mail [sender=" + sender + ", recipient=" + recipient + ", date=" + date + ", text=" + text + "]";
+	}
+	
+	public void send() {
+		Email email = EmailBuilder.startingBlank().appendText(getText()).to(getRecipient())
+				.from(getSender()).fixingSentDate(new Date(2021, 12, 11)).buildEmail();
+		Mailer mailer = MailerBuilder.withSMTPServer("smtp.uni-koeln.de", 25).buildMailer();
+		mailer.sendMail(email);
 	}
 
 }
